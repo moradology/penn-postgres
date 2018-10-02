@@ -1,0 +1,3 @@
+CREATE EXTENSION postgis;
+ALTER EXTENSION postgis UPDATE;
+

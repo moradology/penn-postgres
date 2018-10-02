@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  db:
+    image: quay.io/azavea/postgis:postgres9.6-postgis2.3
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_PASSWORD=penn
