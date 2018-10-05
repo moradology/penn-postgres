@@ -1,77 +1,82 @@
-# Docker and PostGIS
+# SQL, PostGIS, and QGIS
 
-[Note on installing Docker for Windows](docker-on-windows.md)
+### Requirements
+
+1. A working Docker installation
+  - [Mac users](https://docs.docker.com/v17.12/docker-for-mac/install/)
+  - [Windows users](https://docs.docker.com/v17.12/docker-for-windows/install/)
+  - Linux users (you're fine)
+
+> NOTE ON WINDOWS INSTALLATIONS:
+> Windows Professional edition ships with 'Hyper-V', which is required
+> for modern Docker installations. Very likely, you have the Home
+> edition of Windows and will have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/),
+> which is an older, clunkier method of using Docker. It can work, but
+> we won't be spending significant time assisting with installation issues.
+> It is *highly* recommended that you come to the workshop with a
+> working installation of Docker to ensure you get the most from
+> in-person instruction. Barring that, you will be asked to pair with
+> someone whose installation works.
+
+2. A [QGIS 3.X](https://qgis.org/en/site/forusers/download.html) installation
+
+3. A working internet connection
 
 
-### What is Docker?
-
-1. what can docker do?
-2. how to talk to docker
-3. how to put files on docker
-4. docker compose to get programs to communicate with each other
+### Sections
 
 
-### What is a database?
+#### SQL Introduction
 
-1. Types of DB
+A brief introduction to relational databases, the SQL standard,
+the Postgresql dialect of SQL, and the 'GIS' of 'PostGIS'
+
+1. What is SQL?
 2. DB types (postgres + postgis)
-2. Indices
 3. Query Language
 4. High level concepts
-
-> Q: What's makes a database 'spatial'?
-> A: Spatial predicates, spatial indices, GIS convenience
+5. Geometry concepts (PostGIS)
 
 
-### Connecting to your database
+#### Docker Introduction
 
-1. Using Docker `exec` to get into your container
-2. Forwarding ports with docker
+Introduction to 'containers', Docker's command line tools, and the
+features most relevant to running PostGIS with QGIS
 
-
-### Ingesting Data
-
-1. Creating tables
-2. Inserting data
-3. Updating data
-4. Using the COPY command to do bulk inserts
-5. QGIS insertion
-5. Application programming (demonstration only)
+1. docker concepts
+2. what can docker do?
+3. how to put files on docker
+4. communication with processes inside docker
 
 
-### Queries
+#### Introduction to QGIS
 
-> Note: For a full list of Postgresql keywords, visit https://www.postgresql.org/docs/8.1/static/sql-keywords-appendix.html
+Instruction on loading and viewing layers in QGIS; connecting QGIS
+to a running PostGIS instance
 
-1. Basics: SELECT; WHERE; FROM
-2. Predicates
-3. Spatial predicates
-
-
-### Advanced Patterns
-
-1. Joins
-2. Subqueries & aliases & WITH
-3. Grouping
-4. Aggregations
-5. TBD
+1. Loading and viewing layers
+2. Coloring layers
+3. Viewing layer attributes
+4. Connecting to a database
 
 
-### PostGIS Utilities
+#### Solving Tough Geospatial Problems
 
-1. Geometry constructors
-2. Spatial predication
-  - Testing spatial relationships
-  - Deriving measurements
-3. ST_As . . .
-4. QGIS export
-5. pgsql2shp
+Two complex, real world datasets will be provided (as well as some
+instruction and assistance in making them available through
+PostGIS/QGIS) which invite a host of interesting questions. Sample
+queries will be demonstrated, we will work through queries suggested in
+class, and participants will have an opportunity to ask their own
+questions with instructor assistance.
 
-### Visualizing
 
-1. QGIS
-2. ST_AsGeoJSON
+#### PostGIS Utilities
 
+Extra utilities that we may/may not have time to cover
+
+1. Using the COPY command to do bulk inserts
+2. pgsql2shp
+3. Application programming (demonstration only)
 
 
 
