@@ -60,3 +60,7 @@ Joins come in a few flavors. These venn diagrams illustrate the relationships th
 #### Types and coercion
 
 TODO
+
+#### Normalization
+
+
