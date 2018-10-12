@@ -116,18 +116,42 @@ Database indexes do basically the same thing. By storing data in some predictabl
 the database is capable of skipping many - even most - irrelevant data.
 
 ```SQL
-CREATE INDEX name ON table USING gin(column);
+CREATE INDEX skittles_gin ON skittles USING gin(color);
 ```
 
 ```SQL
-CREATE INDEX name ON table USING gist(column);
+CREATE INDEX skittles_gist ON skittles USING gist(color);
 ```
-
-
-We'll have use for indexes later, as we begin to ask some complex
-spatial queries.
 
 [index intro](https://www.postgresql.org/docs/9.6/static/indexes-intro.html)
 [creating indexes](https://www.postgresql.org/docs/9.6/static/sql-createindex.html)
 [types of index](https://www.postgresql.org/docs/9.6/static/indexes-types.html)
+
+##### Clustering
+
+With an index, it is possible to rewrite your data to disk according to said index.
+The benefits of clustering your data together on disk are difficult to predict, but
+can certainly impact query performance by limiting the amount of data your computer
+must read to find similar values. All indexes are capable of this, even spatial indices.
+
+```SQL
+CLUSTER skittles ON skittles_gin;
+```
+
+[sql clustering](https://www.postgresql.org/docs/9.6/static/sql-cluster.html)
+
+##### Vacuum analysis
+
+SQL programming is different than other programming you've probably done. Instead of
+describing how to get what we want out of a table, SQL asks only that we describe/declare
+what we would like. Postgres reads the declaration and then tries to make smart decisions
+about how to search for the records that satisfy the query. This can be improved by
+analyzing tables and their indexes ahead of time.
+
+```SQL
+VACUUM ANALYZE skittles;
+```
+
+[sql vacuum](https://www.postgresql.org/docs/9.5/static/sql-vacuum.html)
+
 
