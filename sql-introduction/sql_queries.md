@@ -9,9 +9,9 @@ pieces that make up a query and the questions/queries SQL is capable of expressi
 > the popularity of sqlfiddle will sometimes mean it takes some time to get back to
 > you. If it is sluggish, give it a minute and try again
 
-#### Simple SELECTion
+#### Simple Selection
 
-Let's turn back to the very simple skittles table we defined in
+Let's turn back to the very simple skittles table created in
 [what_is_sql.md](./what_is_sql.md): http://sqlfiddle.com/#!17/df5a9
 
 On the right side of the screen, we can define queries we'd like to run against
@@ -19,7 +19,7 @@ the the table defined at left. Let's see what it looks like to ask for all and o
 the red skittles:
 
 In English, I might ask you to give me (`SELECT`), from among your skittles (`FROM`) only
-on the condition (`WHERE`) they are red. In SQL, we say
+on the condition (`WHERE`) they are red. In SQL, this might be stated
 ```SQL
 SELECT * FROM skittles WHERE color = 'red';
 ```
@@ -39,6 +39,8 @@ SELECT id FROM skittles WHERE color = 'red';
 ```
 http://sqlfiddle.com/#!17/df5a9/3
 
+reference: https://www.postgresql.org/docs/9.6/static/queries-overview.html
+
 
 #### Joins
 
@@ -51,16 +53,19 @@ the real world, you'd have to consult your memory about the colors I like and us
 to pick out the appropriate skittles. SQL expressions formalize this idea of comparing two
 otherwise disconnected datasets with the concept of a join.
 
+Let's look at some queries that involve a join of two tables
+```SQL
+/* Here, we'ooking up an item's stock, description, and price */
+SELECT store.stock, item.description, item.price
+  FROM store, item
+  WHERE store.id = item.id;
+
+/* Alternatively */
+SELECT store.stock, item.description, item.price
+  FROM item INNER JOIN store ON (item.id = store.id);
+```
+
 Joins come in a few flavors. These venn diagrams illustrate the relationships they encode:
 ![SQL joins](https://lukaseder.files.wordpress.com/2015/10/venn.png "SQL Joins as Venn Diagrams")
-
-
-
-
-#### Types and coercion
-
-TODO
-
-#### Normalization
 
 

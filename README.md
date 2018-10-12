@@ -26,18 +26,6 @@
 ### Sections
 
 
-#### SQL Introduction
-
-A brief introduction to relational databases, the SQL standard,
-the Postgresql dialect of SQL, and the 'GIS' of 'PostGIS'
-
-1. What is SQL?
-2. DB types (postgres + postgis)
-3. Query Language
-4. High level concepts
-5. Geometry concepts (PostGIS)
-
-
 #### Docker Introduction
 
 Introduction to 'containers', Docker's command line tools, and the
@@ -47,6 +35,19 @@ features most relevant to running PostGIS with QGIS
 2. what can docker do?
 3. how to put files on docker
 4. communication with processes inside docker
+
+
+#### SQL Introduction
+
+A brief introduction to relational databases, the SQL standard,
+the Postgresql dialect of SQL, and the 'GIS' of 'PostGIS'
+
+1. What is SQL?
+2. What are databases?
+3. SQL Queries
+5. Geometry concepts (PostGIS)
+
+The [PostgreSQL Manual](https://www.postgresql.org/docs/9.6/static/index.html)
 
 
 #### Introduction to QGIS

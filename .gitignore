@@ -112,9 +112,5 @@ dmypy.json
 
 
 # sensitive
-voter-data/csv/voters.csv
-voter-data/csv/political_parties.csv
-voter-data/csv/election_map_20180917.csv
-voter-data/csv/zone_codes_.20180917csv
-voter-data/csv/zone_types_20180917.csv
+voter-data/csv/*
 
