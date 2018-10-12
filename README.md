@@ -31,10 +31,10 @@
 Introduction to 'containers', Docker's command line tools, and the
 features most relevant to running PostGIS with QGIS
 
-1. docker concepts
-2. what can docker do?
-3. how to put files on docker
-4. communication with processes inside docker
+1. [docker concepts](https://docs.docker.com/engine/docker-overview/)
+2. [what can docker do?](https://docs.docker.com/engine/reference/run/)
+3. [how to put files on docker](https://docs.docker.com/engine/reference/run/#volume-shared-filesystems)
+4. [communication with processes inside docker](https://docs.docker.com/engine/reference/run/#expose-incoming-ports)
 
 
 #### SQL Introduction
@@ -42,10 +42,9 @@ features most relevant to running PostGIS with QGIS
 A brief introduction to relational databases, the SQL standard,
 the Postgresql dialect of SQL, and the 'GIS' of 'PostGIS'
 
-1. What is SQL?
-2. What are databases?
-3. SQL Queries
-5. Geometry concepts (PostGIS)
+1. [What is SQL?](./sql-introduction/what_is_sql.md)
+2. [SQL Queries](./sql-introduction/sql_queries.md)
+3. [Geometry concepts](./sql-introduction/spatial_sql.md)
 
 The [PostgreSQL Manual](https://www.postgresql.org/docs/9.6/static/index.html)
 
